@@ -64,8 +64,8 @@ sometimes in scenarios we do not anticipate.
 
 The use of simulators for human-robot interaction (HRI) encompasses a variety of
 use-cases, from prototyping through evaluation to anticipatory simulation at
-runtime. It however suffers from a specific integration problem: Simulation in
-HRI requires to model robots in all their complexity \emph{plus} a mean of
+runtime. It, however, suffers from a specific integration problem: Simulation in
+HRI requires to model robots in all their complexity \emph{plus} a means of
 representing and interacting with human agents. We therefore believe that an
 important stepping stone for a wider use of simulation in HRI is the
 availability of an integrated, easy-to-use framework that can encompass all
@@ -102,7 +102,7 @@ only sharing the MORSE simulator as common simulation platform.
 
 \begin{inparaenum}[\itshape 1\upshape)]
 In the HRI literature, several distinct goals for the use of simulation can be 
-discerned. Without claim to completeness, we categorize them into \item prototyping, 
+discerned. Without claiming completeness, we categorize them into \item prototyping, 
 \item human modeling, \item interactive simulation, and \item anticipatory simulation.  
 \end{inparaenum}
 
@@ -118,29 +118,33 @@ paying attention~\cite{knepper2012pedestrian,guzzi2013human}).
 \cite{garrell2010model} present for example a pedestrian model which has been
 evaluated against a large-scale database of recorded human movements. When
 detailed motion or other actions (such as speaking) is required, cognitive
-models have often been used~\cite{sun2006cognition}, and recently also in
-HRI~\cite{trafton2013act}.  It is probably safe to say that such models are
+models have been used in many areas~\cite{sun2006cognition}, and increasingly
+also in HRI (e.g.,~\cite{trafton2013act}).  It is probably safe to say that such models are
 still far from general, but already quite useful for specific situations.
 
-A problem with these approaches is the significant up-front effort required for
-modeling. Therefore, some research has explored the use of game engines in what
+A problem with modeling is the significant up-front effort required. Therefore, 
+some research has explored the use of game engines in what
 we call \emph{interactive simulation}: a real human controls a simulated human
 avatar interactively. While not fully automated, it allows reliable capture of
 interaction data for later analysis. This has been used for a long time in
 tele-operation settings~\cite{wang2005validating} and also more recently for
 so-called ``crowd-sourcing'' work~\cite{breazeal2013crowdsourcing}.
 
-A very different use of simulation is \emph{anticipatory simulation}. Here, 
-a simulator is used \emph{at runtime}, to
-be able to quickly explore the likely consequences of robotic actions. This
-uses simulation engines mainly to support spatial computations, \eg
+The last use case, which is becoming more popular recently, is a very different 
+use of simulation: \emph{anticipatory simulation}. Its goal
+is to choose amongst a range of possible actions by comparing multiple possibilities
+in simulation, immediately prior to execution on a physical robot. This
+makes use of, e.g., the physics and spatial computation subsystems in simulators,
+to \emph{anticipate} likely outcomes. 
+Examples of such applications are
 to compute social metrics such as walking comfort~\cite{kidokoro2013will} or
-proxemics~\cite{hoffman2010effects}. The general goal is to enable the system to
-choose an action based on these metrics.
+proxemics~\cite{hoffman2010effects}.
 
 We believe it is clear that these use-cases benefit from each other. Particularly
 prototyping requires models, which could be manually specified, learned from 
-real-world data, or learned interactively through the simulator.
+real-world data, or learned interactively through the simulator. Anticipatory
+simulation can make use of all these, and, additionally, requires flexible software
+able to run faster than real-time.
 
 \subsubsection*{Simulators for HRI}
 
@@ -168,7 +172,10 @@ an acceptable interface remains challenging~\cite{gratch2002creating}.
 As stated before, we think that the integration of these diverse functionalities
 into standard robot simulators would be an ideal next step, making specialized
 tools available to a much wider audience, and thus likely also identifying new
-avenues for improvements.
+avenues for improvements. We further believe that Open Source software, such as
+MORSE or Gazebo, is particularly able to support this, because everything is open
+and easily changed. This contrasts with otherwise capable frameworks, such as
+USARSim, based on proprietary engines.
 
 \subsection*{HRI and the MORSE simulator}
 
