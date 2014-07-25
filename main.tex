@@ -222,44 +222,46 @@ with a tele-operated human model, hence with realistic human behaviors. As
 presented in~\cite{lemaignan2012morse}, the human avatar can be controlled using
 a Kinect-like device. The same avatar can also be programmatically controlled
 by external scripts, like any robot in MORSE. With standard MORSE actuators like
-the \emph{waypoint} actuator, the researcher can for instance pre-define paths
-that the human avatar will follow in a simulated environment.
+the \emph{waypoint} actuator, the researcher can, for instance, either pre-define paths
+that the human avatar will follow in a simulated environment, or plug in a 
+pedestrian model.
 
 \section{HRI Simulation : Five Scenarios}
 
-To illustrate how simulation can support research in HRI, we present in the next
-sections five case-studies.  The first three scenarios, \emph{Situation
+Both to demonstrate how versatile MORSE is, and to further illustrate 
+how simulation can support research in HRI, we now present five case-studies.  
+The first three scenarios, \emph{Situation
 Assessment for HRI and Simulated Feedback}, \emph{An Expectations Framework for
 Domestic Robot Assistants} and \emph{Preliminary Testing of Human-Aware
-Navigation Planner} illustrate the typically use-case for simulation: rather
+Navigation Planner} illustrate the typical approach for simulation: rather
 complex virtual environments are created where human presence plays a
 central role, and HRI algorithms are tested in a convenient and repeatable way.
 Note that, while we introduce here \emph{simulation-only} scenarios, they all
-are test-cases of experiments that have been conducted on real robots:
-simulation is used here to support real-world deployments.
+are prototypes of experiments that have been conducted on real robots:
+simulation is used here to prepare for real-world deployments.
 
 The fourth scenario, \emph{Data Acquisition through Automatic Scene Generation}
 shows how simulation is used as an alternative source of input to train robots to
 behave in human environments, and the last scenario, \emph{Automated Execution
 of Prototype HRI Experiments}, presents how the simulator can be used to provide
-automatic testing of human-aware behaviors, fully integrated to the software
+automatic testing of human-aware behaviors, fully integrated in the software
 development workflow. Each of the presentations follow the same structure: we
-first introduce the scenario, we then highlight how simulation has been leveraged
-and its benefits, and we finally mention some of the shortcomings of the tool.
+first introduce the scenario, then highlight how simulation has been leveraged
+and its benefits, and finally mention some of the shortcomings of the tool.
 
 \subsection{Situation Assessment for HRI and Simulated Feedback}
 \label{sc:assessment}
 
-When studying human-robot interaction, understanding the environment in which
-agents will interact is a key issue. In this first application, MORSE provides a
-virtual environment that we use to harness situation assessment algorithms
-(performed by a software called SPARK ~\cite{Milliez2014}, for SPAtial
-Reasoning and Knowledge) that also include human-centered \emph{perspective
-taking}. The robot updates its knowledge in SPARK using its own position, human
-position and objects seen through abstracted, symbolic cameras provided by MORSE
-(so-called \emph{semantic} cameras). In this particular scenario
-(figure~\ref{fig|spark}), the human is sitting in a couch and ask the robot to
-bring specific objects that may be in another room (Pick-Place-Carry task).
+For human-robot interaction, understanding the environment in which
+agents interact is a key issue. In particular, \emph{perspective taking}
+is important to understand human actions and act appropriately. 
+This use-case uses MORSE as a virtual environment in which to apply situation 
+assessment algorithms (in our case, the SPAtial Reasoning and Knowledge
+(SPARK) package~\cite{Milliez2014}). The robot updates its knowledge using its 
+own position, human position and objects seen through abstracted, symbolic cameras 
+provided by MORSE (so-called \emph{semantic} cameras). For example, consider 
+figure~\ref{fig|spark}, where the human is sitting on a couch and asks the robot to
+bring specific objects, which may be in another room (Fetch-and-Carry task).
 
 \begin{figure}[t]
       \centering
