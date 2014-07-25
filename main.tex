@@ -272,38 +272,34 @@ bring specific objects, which may be in another room (Fetch-and-Carry task).
       \label{fig|spark}
 \end{figure}
 
-\emph{Benefits of the simulation} The direct benefits of relying on MORSE for
-the development of the situation assessment algorithms is the low-cost of
-deployment (manual testing on physical systems is labour-intensive), as well as
-the repeatability of the experimental conditions, important to assess the
-algorithmic improvements.  Also, relying on MORSE effectively supports
-collaboration between the partners involved in this project (MaRDi
-project\footnote{\url{http://mardi.metz.supelec.fr}}): our partners are also
-using MORSE simulation to test their software and collect data with the same
+\textbf{Benefits of the simulation} The primary functional benefit of MORSE here 
+is for \emph{anticipatory simulation}. Moreover, individual algorithms can also be measured 
+in a repeatable environment (that is, without possible confounding effects due variability
+of real humans). 
+Moreover, relying on MORSE effectively supports collaboration between the partners 
+involved in this project (MaRDi project\footnote{\url{http://mardi.metz.supelec.fr}}): 
+our partners are also
+using MORSE simulation to \emph{prototype} their software and collect data with the same
 environment in their laboratory, where they focus on dialog processing. They can
-train their dialog system using MORSE feedback to test the robot behaviors~\cite{simparmardi2014}.
+train their dialog system using MORSE feedback to test the robot behaviors~\cite{simparmardi2014},.
 
 \subsection{An Expectations Framework for Domestic Robot Assistants}
 \label{sc:expectations}
 
-In this scenario, an apartment is simulated in which a domestic service robot is
-living together with a person (figure~\ref{fig|apartment}).  A PR2 robot is
-controlled via ROS and the {\sc Cram} reactive plan language, which is used on
-several other real robots. The robots' duty is to observe the person performing
-different activities and detect unexpected situations based on the validation of
-different types of expectations~\cite{Karg2013}.  The detection of such
-unexpected behavior can help future domestic service robots to better assess
-situations and adapt their actions to human behavior.
-
-\emph{Benefits of the simulation} The use of the MORSE simulator enabled us to
-set up a large testbed by reusing the real robot control layer via the ROS
-middleware and easy-to-generate unpredictable human behaviors using the human
-component of MORSE. Setting up of such an apartment in a real-world setting,
-together with a suitable sensor setup and a reliable robot control, would not
-only introduce huge costs but would also be a time-consuming task which can
-distract researchers from their actual research focus. The use of the simulated
-scenario enables us to gain many insights into the problem domain in a scenario
-that would not been possible within our project, while the algorithms were
+This case study considers domestic service robots, \ie a robot is
+co-located in a human appartment, carrying out various services. As part of 
+this, a goal is to detect novel situations, both for future improvement, and 
+for possible self-adaptation. It does so by monitoring a set of
+expectations~\cite{Karg2013}.
+ 
+\textbf{Benefits of the simulation} Developing a monitoring system requires
+running through a large number of both expected und unexpected behaviors for
+every change. Doing so manually for every step during development would be 
+prohibitively expensive. In contrast, using a simulator enabled us to
+set up and run a large testbed of easy-to-generate unpredictable human behaviors,
+using the human component of MORSE. The use of the simulated
+scenario also enables us to gain many insights into the problem domain in a scenario
+that would not been possible within our project. Of course, the algorithms were
 eventually validated on the real robot, inside a smaller real-world environment.
 
 \begin{figure}[t]
@@ -314,11 +310,10 @@ eventually validated on the real robot, inside a smaller real-world environment.
 \end{figure}
 
 The human component of MORSE enabled us to test and validate our approach
-dynamically in a variety of situations. Since it can be controlled in real-time
-like in a 3D computer game while at the same time, a robot can be simulated by
-state-of-the-art components, it is possible to generate a multitude of
-situations on which the robot has to react. This greatly supported our project
-to gain insights about our approach, detect weak points and make improvements.
+dynamically in a variety of situations. Moreover, since it can be controlled
+\emph{interactively}, like in a 3D computer game, it is easily possible to generate 
+a multitude of situations to which the robot has to react. This greatly supported 
+our project to gain insights about our approach, detect weak points and make improvements.
 
 \subsection{Preliminary Testing of Human-Aware Navigation Planner}
 \label{sc:navigation}
