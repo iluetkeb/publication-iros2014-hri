@@ -293,7 +293,7 @@ for possible self-adaptation. It does so by monitoring a set of
 expectations~\cite{Karg2013}.
  
 \textbf{Benefits of the simulation} Developing a monitoring system requires
-running through a large number of both expected und unexpected behaviors for
+re-testing a large number of both expected und unexpected behaviors for
 every change. Doing so manually for every step during development would be 
 prohibitively expensive. In contrast, using a simulator enabled us to
 set up and run a large testbed of easy-to-generate unpredictable human behaviors,
@@ -318,15 +318,14 @@ our project to gain insights about our approach, detect weak points and make imp
 \subsection{Preliminary Testing of Human-Aware Navigation Planner}
 \label{sc:navigation}
 
-To evaluate the improvements in the human-aware navigation planner developed at
-LAAS we carried out a user study. An experiment was set up,
+To \emph{prototype} and evaluate improvements in the human-aware navigation planner 
+developed at LAAS, user studies are usually first carried out in simulation,
+then in the real-world. For example, we set up an experiment,
 where a robot encounters a human crossing its path (at $90^{\circ }$ angle to
-each other) while the robot is moving forward to its navigation goal. For
-preliminary testing of the planning algorithm, our lab area was simulated in
-MORSE. This simulated environment was extensively used
-to review the algorithm before it was deployed on the PR2 robot to carry out
-real-world experiments (whose results have been published
-in~\cite{ThibaultKruse2014}).
+each other) while the robot is moving forward to its navigation goal. MORSE
+was first used to model the environment, using the included modeler, and then
+for running the simulated environment, based on the included PR2 simulation. For
+more details, see~\cite{ThibaultKruse2014}).
 
 
 \textbf{Benefits of the simulation} Development of human-robot interaction
